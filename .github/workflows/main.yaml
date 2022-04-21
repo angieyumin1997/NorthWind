@@ -1,5 +1,7 @@
 name: Compile, test, deploy 
 on: [ "push" ]
+env: 
+  SPRING_DATASOURCE_PASSWORD: ${{ secrets.spring_datasource_password }}
 jobs:
   step1:
     runs-on: ubuntu-latest
