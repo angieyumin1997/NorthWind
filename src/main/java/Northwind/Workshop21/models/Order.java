@@ -1,5 +1,7 @@
 package Northwind.Workshop21.models;
 
+import java.util.Date;
+
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 public class Order {
@@ -10,6 +12,21 @@ public class Order {
     private String ship_address;
     private Double shipping_fee;
     private String payment_type;
+    private Date ship_date;
+    private Date order_date;
+
+    public Date getShip_date() {
+        return ship_date;
+    }
+    public void setShip_date(Date ship_date) {
+        this.ship_date = ship_date;
+    }
+    public Date getOrder_date() {
+        return order_date;
+    }
+    public void setOrder_date(Date order_date) {
+        this.order_date = order_date;
+    }
 
     public Integer getCustomer_id() {
         return customer_id;
@@ -57,6 +74,9 @@ public class Order {
         order.setShip_address(rs.getString("ship_address"));
         order.setShipping_fee(rs.getDouble("shipping_fee"));
         order.setPayment_type(rs.getString("payment_type"));
+        order.setOrder_date(rs.getDate("cast(order_date as date)"));
+        order.setShip_date(rs.getDate("cast(shipped_date as date)"));
+
         return order;
     } 
 

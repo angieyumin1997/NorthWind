@@ -79,7 +79,9 @@ public class CustomersRestController {
             .add("ship_name",(o.getShip_name()== null) ? "" : o.getShip_name())
             .add("ship_address",(o.getShip_address() == null) ? "" : o.getShip_address())
             .add("shipping_fee",(o.getShipping_fee()== null) ? "" : o.getShipping_fee().toString())
-            .add("payment_type",(o.getPayment_type()== null) ? "" : o.getPayment_type().toString());
+            .add("payment_type",(o.getPayment_type()== null) ? "" : o.getPayment_type().toString())
+            .add("ship_date",(o.getShip_date()== null) ? "" : o.getShip_date().toString())
+            .add("order_date",(o.getOrder_date()== null) ? "" : o.getOrder_date().toString());
             arrBuilder.add(builder.build());
         }
 
